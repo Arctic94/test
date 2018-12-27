@@ -7,11 +7,11 @@
 </ion-header>
 
 <ion-content padding>
-
-  <ion-list>
-      
-    <button ion-item *ngFor="let usuario of usuarios" (click)="detalle_empleado(usuario)">
-      {{usuario.id}} - {{ usuario.nombre }} {{usuario.apellido}}
-    </button>  
-  </ion-list>
+  <ion-searchbar placeholder="Buscar empleado" (ionInput)="getItems($event)"></ion-searchbar>
+    <ion-list>
+        
+      <button ion-item *ngFor="let usuario of items" (click)="detalle_empleado(usuario)">
+        {{usuario.id}} - {{ usuario.nombre }} {{usuario.apellido}}
+      </button>  
+    </ion-list>
 </ion-content>
